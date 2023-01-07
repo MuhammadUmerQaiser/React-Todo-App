@@ -2,9 +2,18 @@ import './App.css';
 import { Header } from "./Components/Header";
 import { Todos } from "./Components/Todos";
 import { Footer } from "./Components/Footer";
+import React, {useState} from 'react';
 
 function App() {
-  const todos = [
+  const onDelete = (todo) => {
+    console.log('Todo', todo);
+
+    setTodos(todos.filter((e) => {
+      return e !== todo
+    }))
+  }
+
+  const [todos, setTodos] = useState([
     {
       sno: 1,
       title: "Watch Drama",
@@ -20,11 +29,11 @@ function App() {
       title: "Sleep",
       desc: "I have to sleep at 1.00"
     },
-  ];
+  ]);
   return (
     <div>
       <Header title="My Todo App" />
-      <Todos todos={todos}/>
+      <Todos todos={todos} onDelete={onDelete} />
       <Footer />
     </div>
   );

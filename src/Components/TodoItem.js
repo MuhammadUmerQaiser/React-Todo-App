@@ -1,6 +1,6 @@
 import React from 'react'
 
-export const TodoItem = ({ todo }) => {
+export const TodoItem = ({ todo, onDelete }) => {
   return (
     <div className='container mt-3'>
       <div className='card p-2'>
@@ -10,7 +10,7 @@ export const TodoItem = ({ todo }) => {
         <h4>Description</h4>
         <p>{todo.desc}</p>
 
-        <button className='btn btn-danger btn-sm'>Delete</button>
+        <button className='btn btn-danger btn-sm' onClick={() => onDelete(todo)}>Delete</button>
       </div>
     </div>
   )

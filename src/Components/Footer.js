@@ -1,9 +1,14 @@
 import React from 'react'
 
 export const Footer = () => {
+  let footerStyle = {
+    position: 'absolute',
+    top: '100vh',
+    width: '100%'
+  }
   return (
-    <div>
-        <h4>Footer Goes Here!</h4>
-    </div>
+    <footer className='bg-dark text-light py-5' style={footerStyle}>
+      <p className='text-center'>Copyrights &copy; TodoApp.com</p>        
+    </footer>
   )
 }
