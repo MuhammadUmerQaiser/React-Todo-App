@@ -42,7 +42,7 @@ function App() {
   }
 
   const [todos, setTodos] = useState([]);
-  
+
   useEffect(() => {
     localStorage.setItem("todos", JSON.stringify(todos))
 
